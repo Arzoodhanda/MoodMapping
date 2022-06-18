@@ -1,0 +1,55 @@
+.message-crossbutton {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 1.9rem;
+}
+.alert-warning {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+h4 {
+  margin: 0;
+}
+
+.alert {
+  color: white;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 5px 0px;
+  width: fit-content;
+  position: absolute;
+  right: 4px;
+  top: 65px;
+  z-index: 1000;
+  height: 4rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  display: flex !important;
+  align-items: center;
+  border-right: 10px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.4);
+  transition: 300ms;
+}
+.alert:hover {
+  border-right: 10px solid red;
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.6);
+  transition: 300ms;
+}
+.alert:hover .message-crossbutton {
+  color: red;
+}
+.alert h4 {
+  font-size: 1rem;
+}
+
+.alert-dismissible .close {
+  height: inherit;
+}
+
+@media only screen and (max-width: 1024px) {
+  .alert {
+    top: 65px;
+  }
+}

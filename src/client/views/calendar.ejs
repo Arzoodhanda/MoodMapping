@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/evo-calendar.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../css/evo-calendar.midnight-blue.min.css"
+    />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/home_styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/calendar.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <input type="checkbox" id="check" />
+      <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+      </label>
+      <img src="../Assets/Images/Untitled.png" />
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#footer">Contact</a></li>
+        <% if(user === 'undefined'){ %>
+        <li><a href="/signin">Log in</a></li>
+        <% } %> <%if(user !== 'undefined'){ %>
+        <div id="userSectionDiv">
+          <i id="userSection" class="fa-solid fa-user"></i>
+          <div id="userSection_dropdown_content">
+            <div id="dropdownInnerDiv">
+              <p>
+                Welcome <span><%= user.name %></span> <br />
+                <!-- <%= user.email %> -->
+              </p>
+              <a href="/logout"><button>Log Out</button></a>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </ul>
+    </nav>
+    <main>
+      <div id="emojis">
+        <ul>
+          <li onmouseenter="showText(1)" onmouseleave="hideText(1)">
+            <img
+              class="image"
+              src="../Assets/CalendarImages/smile.png"
+              alt="1"
+            />
+            <span id="1">Happy</span>
+          </li>
+          <li onmouseenter="showText(2)" onmouseleave="hideText(2)">
+            <img
+              class="image"
+              src="../Assets/CalendarImages/smiling.png"
+              alt="2"
+            />
+            <span id="2">Very Happy</span>
+          </li>
+          <li onmouseenter="showText(3)" onmouseleave="hideText(3)">
+            <img class="image" src="../Assets/CalendarImages/sad.png" alt="3" />
+            <span id="3">Sad</span>
+          </li>
+          <li onmouseenter="showText(4)" onmouseleave="hideText(4)">
+            <img
+              class="image"
+              src="../Assets/CalendarImages/confused.png"
+              alt="4"
+            />
+            <span id="4">Confused</span>
+          </li>
+          <li onmouseenter="showText(5)" onmouseleave="hideText(5)">
+            <img
+              class="image"
+              src="../Assets/CalendarImages/TooSad.png"
+              alt="5"
+            />
+            <span id="5">Too Sad</span>
+          </li>
+        </ul>
+      </div>
+      <div class="main-container">
+        <section id="demos">
+          <div class="section-content">
+            <div class="console-log">
+              <div class="log-content">
+                <div class="--noshadow" id="demoEvoCalendar"></div>
+              </div>
+            </div>
+            <div class="action-buttons">
+              <button class="btn-action" id="addBtn">ADD EVENT</button>
+              <button class="btn-action" id="removeBtn" disabled>
+                REMOVE EVENT
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <section id="footer">
+      <img src="../Assets/Images/footer-img.png" class="footer-img" />
+      <div class="title-text">
+        <p>CONTACT</p>
+        <h1>Visit Shop Today</h1>
+      </div>
+      <div class="footer-row">
+        <div class="footer-left">
+          <h1>Opening Hours</h1>
+          <p><i class="fa fa-clock-o"></i>Monday to Friday - 9am to 9pm</p>
+          <p><i class="fa fa-clock-o"></i>Saturday to Sunday - 8am to 11pm</p>
+        </div>
+        <div class="footer-right">
+          <h1>Get In Touch</h1>
+          <p>#30 abc Clolny, xyz City IN<i class="fa fa-map-marker"></i></p>
+          <p>example@website.com<i class="fa fa-paper-plane"></i></p>
+          <p>+91 012345678<i class="fa fa-phone"></i></p>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-youtube-play"></i>
+        <p>Copyright</p>
+      </div>
+    </section>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/cd247c1264.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="../js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="../js/evo-calendar.min.js"></script>
+  <script src="../js/calendar.js"></script>
+</html>

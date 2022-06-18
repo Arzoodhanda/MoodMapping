@@ -1,0 +1,12 @@
+<% if(typeof error!= 'undefined') { %> <% error.forEach(function(error){ %>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <h4><%= error %></h4>
+  <button
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+  ></button>
+  <span class="message-crossbutton" aria-hidden="true">&times;</span>
+</div>
+<% }); %> <% } %>
